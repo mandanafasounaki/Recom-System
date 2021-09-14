@@ -18,4 +18,7 @@ python main.py
 Send the selected cart as request to http://127.0.0.1:8000/product/recommends. The list of the recommended products will be receieved.
 
   
+## Notebooks
 
+notebooks folder contains "Word2Vec.ipynb" for trainig the model, "recomm_notebook.ipynb" for creating a random list of products and getting the recommendations, "evaluate.ipynb" for evaluating the method
+using Mean Average Precision at K (MAP@K).
