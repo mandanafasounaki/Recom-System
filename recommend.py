@@ -2,8 +2,7 @@ from gensim.models import Word2Vec
 import pandas as pd
 import sqlite3 
 import numpy as np
-import json 
-import ast
+import json
 
 def recomm(shoplist, model_path):
     '''
@@ -24,11 +23,9 @@ def recomm(shoplist, model_path):
 
     ##find the recommendations and sort based on the scores 
     ##and select the first ten recommendations
-    scores = []
     sims = []
     nrmlzd_recoms = []
-    norml = []   
-    allsims = []
+    norml = []
     probs = []
     
     for _item in shoplist['productid']:
@@ -54,7 +51,6 @@ def recomm(shoplist, model_path):
     first_ten = _sorted[:10]
     
     ##extract the meta data of recommendation list
-    recomms = []
     rows = []
     for r in first_ten:
         _id = r[0]
@@ -89,14 +85,10 @@ def recomm_json(shoplist, model_path):
 
     ##find the recommendations and sort based on the scores 
     ##and select the first ten recommendations
-    scores = []
     sims = []
     nrmlzd_recoms = []
-    norml = []   
-    allsims = []
+    norml = []
     probs = []
-
-    
     # shoplist = json.loads(str_cart)
     
     for _item in shoplist['productid'].values():
@@ -107,7 +99,7 @@ def recomm_json(shoplist, model_path):
         for n in range(len(temp_sims)):
             probs.append(temp_sims[n][1])
             for_norm.append(temp_sims[n][1])
-
+        ##normalize
         norm = np.linalg.norm(for_norm)
         middle_norm = for_norm / norm
         for mn in middle_norm:
@@ -120,8 +112,7 @@ def recomm_json(shoplist, model_path):
     
     
     first_ten = _sorted[:10]
-    
-    recomms = []
+
     rows = []
     for r in first_ten:
         _id = r[0]
