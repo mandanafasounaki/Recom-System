@@ -1,6 +1,5 @@
 from starlette.applications import Starlette
 from starlette.responses import JSONResponse
-from starlette.requests import Request
 from starlette.routing import Route
 from starlette.endpoints import HTTPEndpoint
 import json
@@ -21,7 +20,7 @@ class Recommend(HTTPEndpoint):
 
 
 app = Starlette(debug=True, routes=[
-    Route('/product/recommend', Recommend),
+    Route('/product/recommends', Recommend),
 ])
 
 if __name__ == "__main__":
