@@ -69,12 +69,12 @@ def recomm(shoplist, model_path):
     
     return df_all
 
-def recomm_json(cart_path, model_path):
+def recomm_json(shoplist, model_path):
     '''
     Gets the list of grocery items from json file
     
     Arguments:
-    shoplist = DataFrame of the grocery items
+    shoplist = dictionary of the grocery items
     model_path = path to the model for recommendation
     
     Returns:
@@ -95,11 +95,9 @@ def recomm_json(cart_path, model_path):
     norml = []   
     allsims = []
     probs = []
+
     
-    with open(cart_path) as f:
-        str_cart = json.load(f)
-    
-    shoplist = json.loads(str_cart)
+    # shoplist = json.loads(str_cart)
     
     for _item in shoplist['productid'].values():
         temp_sims = model.wv.most_similar(_item)
