@@ -9,7 +9,7 @@ To run the API, install the requirements;
 ```
 pip install requirements.txt
 ```
-Select one of the cart*.json in carts folder as the input cart. 
+For providing the user cart, you can either select one of the cart*.json in carts folder or create a cart of randomly selected items with 'create_random_cart(count, c_name)' function in create_cart.py, where 'count' is the number of items and 'c_name' is the name of the file. This function creates a json file in the current directory.   
 
 ```
 python main.py
