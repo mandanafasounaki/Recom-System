@@ -7,7 +7,7 @@ The API which retrieves products in the cart as request parameters and returns r
 To run the API, install the requirements;
 
 ```
-pip install requirements.txt
+pip install -r requirements.txt
 ```
 For providing the user cart, you can either select one of the "cart*.json" files in carts folder or create a cart of randomly selected items with ```create_random_cart(count, c_name)``` function in create_cart.py, where `count` is the number of items and `c_name` is the name of the file. This function creates a json file in the current directory.   
 
