@@ -1,9 +1,9 @@
-from load_data import load_random_c
+from load_data import load_random
 import json
 
 def create_random_cart(count, c_name):
     
-    item_list = load_random_c(count)
+    item_list = load_random(count)
     
     dict_items = item_list.to_dict()
     
