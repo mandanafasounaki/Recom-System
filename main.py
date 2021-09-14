@@ -7,7 +7,7 @@ import json
 from recommend import recomm_json
 import uvicorn
 
-class Homepage(HTTPEndpoint):
+class Recommend(HTTPEndpoint):
     
     async def post(self, request):
         cart = await request.body()
@@ -21,7 +21,7 @@ class Homepage(HTTPEndpoint):
 
 
 app = Starlette(debug=True, routes=[
-    Route('/', Homepage),
+    Route('/product/recommend', Recommend),
 ])
 
 if __name__ == "__main__":
