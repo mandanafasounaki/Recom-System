@@ -3,4 +3,4 @@ gensim==4.1.0
 uvicorn==0.15.0
 starlette==0.16.0
 numpy==1.20.0
-umap
+umap-learn
